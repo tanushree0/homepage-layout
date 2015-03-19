@@ -1,0 +1,185 @@
+@import "base/base";
+@import "compass";
+@import "breakpoint";
+@import "susy";
+
+$site-header-height: 50px;
+
+// header consists of the "site header" and "hero" (the content of "hero" changes with context).
+header {
+  background: url('../images/banner_home.jpg') center/cover;
+}
+
+#site-header {
+  height: $site-header-height;
+  background: $site-header-color;
+
+  .wrap {
+    height: 100%;
+    position: relative;
+  }
+}
+
+  #logo-container {
+    float: left;
+    height: 80%;
+
+    // to vertically center #logo-container. Refer: https://css-tricks.com/centering-css-complete-guide/
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    >img {
+      height: 100%;
+      width:auto;
+    }
+  }
+
+  #login-navbar {
+    float: right;
+    padding: 0; margin: 0;
+
+    li {
+      float: left;
+      margin-left: 20px;
+      line-height: $site-header-height; // to vertically center it
+
+      color: $text-color-light;
+      list-style: none;
+      text-transform: uppercase;
+      font-size: 0.8em;
+    }
+  }
+
+#hero {
+  padding-bottom: 4em;
+
+  .tagline {
+    margin: auto;
+    text-align: center;
+    width: 80%;
+
+    @include breakpoint(max-width $desktop) {
+      width: 90%;
+    }
+
+    line-height: 1.2em;
+    font-size: 2.8em;
+
+    @include breakpoint(max-width $tablet) {
+      font-size: 1.8em;
+      line-height: 1em;
+    }
+
+    color: $text-color-light;
+    font-family: serif;
+  }
+
+  .select-location {
+    margin-top: 2.5em;
+    @include span(10 of 12);
+    margin-left: span(1 wide) ;
+
+    >.city {
+      width: 30%;
+    }
+    >.location {
+      width: 50%;
+    }
+    >.btn-search {
+      width: 20%;
+    }
+
+    >button {
+      background-color: $button-color-green;
+      color: $text-color-light;
+      text-transform: uppercase;
+      font-size: 0.8em;
+    }
+
+  }
+}
+
+/* .section represents a top-level section in the page*/
+.section {
+  padding: 3em 0;
+}
+
+/* Branding */
+
+#branding {
+  background: $background-color-grey;
+
+  .wrap {
+
+  }
+  .panel {
+    @include span(4 of 12);
+
+    &:last-child {
+      @include last;
+    }
+  }
+
+  .title {
+    font-size: 1.3em;
+    font-weight: bold;
+    vertical-align: middle;
+    padding-bottom: 1em;
+
+
+    img {
+      height: 1.5em;
+      vertical-align: middle;
+    }
+  }
+
+  .description {
+    color: $text-color-grey;
+  }
+}
+
+
+/* Recommended Restaurants */
+
+.filter-bar {
+  input {
+    width: 100%;
+  }
+  .search {
+    @include span(5 of 12);
+  }
+
+  .sort {
+    @include span(2 of 12 last);
+  }
+
+}
+
+#recommended-restaurants {
+  .list {
+    @include clearfix;
+    border-top: 2px solid $background-color-grey;
+    border-bottom: 2px solid $background-color-grey;
+  }
+  .restaurant-image {
+    @include span(2);
+  }
+
+  .restaurant-name {
+    @include span(4);
+  }
+
+  .type {
+    @include span(2);
+  }
+
+  .time, .cost {
+    @include span(1);
+  }
+
+  .btn-viewmenu {
+    @include span(2 last);
+  }
+
+}

@@ -1,0 +1,25 @@
+// Screen
+// ======
+
+
+@import "normalize";
+@import "colors";
+@import "forms";
+@import "typography";
+@import "grids";
+
+
+// any other base styles go here...
+
+img {
+  height: 100%;
+  width: auto;
+}
+
+li{
+  list-style: none;
+}
+
+ul {
+  padding: 0;
+}

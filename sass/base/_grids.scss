@@ -1,0 +1,23 @@
+// Requirements
+// ============
+
+@import "susy";
+
+$susy: (
+  columns: 12,
+  gutters: 30/52,
+  global-box-sizing: border-box,
+  debug: (
+//    image: show-columns
+  )
+);
+
+$tablet: 600px;
+$desktop: 980px;
+
+@include border-box-sizing;
+
+.wrap {
+  @include container(960px);
+  padding: 0 10px;
+}
